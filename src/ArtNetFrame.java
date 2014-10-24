@@ -36,7 +36,6 @@ import java.awt.event.MouseEvent;
 import java.awt.Toolkit;
 
 
-
 public class ArtNetFrame extends JFrame {
   
   private static final long serialVersionUID = 1L;
@@ -122,7 +121,7 @@ public class ArtNetFrame extends JFrame {
       setResizable(false);
       setTitle("Art-Net DMX");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      setBounds(100, 100, 486, 300);
+      setBounds(100, 100, 540, 300);
       
       JMenuBar menuBar = new JMenuBar();
       setJMenuBar(menuBar);
@@ -154,7 +153,7 @@ public class ArtNetFrame extends JFrame {
       contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
       setContentPane(contentPane);
       GridBagLayout gbl_contentPane = new GridBagLayout();
-      gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      gbl_contentPane.columnWidths = new int[]{30, 30, 30, 30, 30, 30, 31, 30, 30, 30, 30, 30, 48, 0, 0};
       gbl_contentPane.rowHeights = new int[]{22, 0, 0, 133, 25, 0};
       gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
       gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
@@ -258,6 +257,7 @@ public class ArtNetFrame extends JFrame {
       
       JLabel lblIp = new JLabel("IP:");
       GridBagConstraints gbc_lblIp = new GridBagConstraints();
+      gbc_lblIp.anchor = GridBagConstraints.EAST;
       gbc_lblIp.insets = new Insets(0, 0, 5, 5);
       gbc_lblIp.gridx = 12;
       gbc_lblIp.gridy = 0;
@@ -275,6 +275,7 @@ public class ArtNetFrame extends JFrame {
       textField_ip.setColumns(10);
       
       JLabel lblNewLabel = new JLabel("Port:");
+      lblNewLabel.setAlignmentY(1.0f);
       GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
       gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
       gbc_lblNewLabel.fill = GridBagConstraints.VERTICAL;
@@ -284,6 +285,8 @@ public class ArtNetFrame extends JFrame {
       contentPane.add(lblNewLabel, gbc_lblNewLabel);
       
       textField_port = new JTextField();
+      textField_port.setAlignmentY(0.0f);
+      textField_port.setAlignmentX(0.0f);
       textField_port.setText("6454");
       GridBagConstraints gbc_textField_port = new GridBagConstraints();
       gbc_textField_port.fill = GridBagConstraints.HORIZONTAL;
